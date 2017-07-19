@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+package com.goit.homework;
+
 import java.util.Scanner;
 
 public class Homework4 {
