@@ -25,12 +25,14 @@ public class Homework4 {
                 break;
             case 2:
                 System.out.println("Введите ширину :");
-                double h = sc.nextDouble();
-
-                System.out.println("Введите высоту :");
                 double w = sc.nextDouble();
 
-                System.out.println(drawRectangle(w,h));
+                System.out.println("Введите высоту :");
+                double h = sc.nextDouble();
+
+                double count =w;
+
+                System.out.println(drawRectangle(w,h,count));
                 System.out.println("\n Введите 1 если хотите продолжить \n Введите любое число чтобы закончить");
                 restart = sc.nextDouble();
                 if (restart == 1) general();
@@ -62,10 +64,10 @@ public class Homework4 {
         if (d == 1) return "1.0";
         return tox(d-1) + " " + d;
     }
-
-    public static String drawRectangle(double w,double h){
-        if (w==1) return "\n"+drawRectangle2(h);
-        return drawRectangle (w-1,h)+"\n"+drawRectangle2(h);
+    public static String drawRectangle(double w,double h,double count){
+        if(h==0) return " ";
+        if(w==1)return "+"+"\n"+drawRectangle(w=count, h-1, count);
+        return"+"+drawRectangle(w-1, h, count);
     }
 
     public static void drawRectangle(double w){
@@ -75,11 +77,6 @@ public class Homework4 {
                 System.out.print("+");
             }
         }
-    }
-
-    public static String drawRectangle2(double h){
-        if (h==1) return "+";
-        return drawRectangle2 (h-1)+"+";
     }
 
     public static double getMax(double a,double b){
